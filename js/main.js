@@ -5,7 +5,7 @@ $(function(){
         alert('No selected');
     } else {
 
-      $.get('/final-project-fullstack-master/php/myuser.php?user=' + userName, function(data) { //This code makes an HTTP request to /arik and puts the data in the 'data' variable
+      $.get('/cv-master/php/myuser.php?user=' + userName, function(data) { //This code makes an HTTP request to /arik and puts the data in the 'data' variable
 
           console.log('Got data', data); //We just print whatever we got from the server
 
@@ -17,11 +17,7 @@ $(function(){
           $('#intro-me').append('<li>'+data.phone+'</li>')
           $('#intro-me').append('<li>'+data.area+'</li>')
           $('#intro-me').append('<li>'+data.email+'</li>')
-		  
-		  //aboutme
-		  $('#about p').text(data.about);
-		  
-		  
+          
           //Social networks
           $ul = $('<ul>', {
               'id': 'social-networks'
@@ -43,17 +39,9 @@ $(function(){
 
           $ul.insertAfter('#intro');
 
-		
+
       });
-	  
-	  		$.get('/final-project-fullstack-master/php/proskills.php?user=' + userName, function(data) { //This code makes an HTTP request to /arik and puts the data in the 'data' variable
-			
-          console.log('Got data', data); //We just print whatever we got from the server
-		  for ($x = 0; $x <= data.length; $x++) {
-			$('#skillname').append('<li>'+data[$x].skillname+'</li>');
-			$('#skillvalue ').append('<li><progress max=100 value='+data[$x].skillvalue+'></progress></li>');
-			}
-		});
+
     }
 
 });
