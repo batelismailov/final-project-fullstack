@@ -69,6 +69,8 @@ $(function(){
 			
           console.log('Got data', data); //We just print whatever we got from the server
 		  //clear "loading" text
+		  $('#skillnameper').empty();
+		  $('#skillvalueper').empty();
 		 
 		 
 		  for ( $x=0;$x <= data.length; $x++) {
