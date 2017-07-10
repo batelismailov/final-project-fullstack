@@ -46,14 +46,28 @@ $(function(){
 		
       });
 	  
-	  		$.get('/final-project-fullstack/php/proskills.php?user=' + userName, function(data) { //This code makes an HTTP request to /arik and puts the data in the 'data' variable
+	  	$.get('/final-project-fullstack/php/proskills.php?user=' + userName, function(data) 
+       { //This code makes an HTTP request to /arik and puts the data in the 'data' variable
 			
           console.log('Got data', data); //We just print whatever we got from the server
-		  for ($x = 0; $x <= data.length; $x++) {
+		  for ($x = 0; $x <= data.length; $x++) 
+          {
 			$('#skillname').append('<li>'+data[$x].skillname+'</li>');
 			$('#skillvalue ').append('<li><progress max=100 value='+data[$x].skillvalue+'></progress></li>');
+          }
+       });
+    
+        
+          $.get('/final-project-fullstack/php/perskills.php?user=' + userName, function(data) 
+         { //This code makes an HTTP request to /arik and puts the data in the 'data' variable
+			
+          console.log('Got data', data); //We just print whatever we got from the server
+		  for ( $x=0;$x <= data.length; $x++) {
+			$('#skillnameper').append('<li>'+data[$x].skillname+'</li>');
+			$('#skillvalueper ').append('<li><progress max=100 value='+data[$x].skillvalue+'></progress></li>');
 			}
 		});
+        
     }
 
 });

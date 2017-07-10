@@ -1,5 +1,5 @@
 <?php
-class User {
+class Skill {
     public $skillname = "";
     public $skillvalue  = "";
 }
@@ -11,7 +11,7 @@ if (isset($_GET) && !empty($_GET)){
 		$selectResult = $mysqli->query($query);
 		if ($selectResult->num_rows) {
 				while ($row = $selectResult->fetch_assoc()) {
-						$ar=new User;
+						$ar=new Skill;
 						$ar->skillname=$row['skillname'];
 						$ar->skillvalue=$row['skillvalue'];
 						
