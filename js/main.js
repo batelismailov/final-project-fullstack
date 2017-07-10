@@ -5,7 +5,7 @@ $(function(){
         alert('No selected');
     } else {
 
-      $.get('/final-project-fullstack-master/php/myuser.php?user=' + userName, function(data) { //This code makes an HTTP request to /arik and puts the data in the 'data' variable
+      $.get('/final-project-fullstack/php/myuser.php?user=' + userName, function(data) { //This code makes an HTTP request to /arik and puts the data in the 'data' variable
 
           console.log('Got data', data); //We just print whatever we got from the server
 
@@ -46,7 +46,7 @@ $(function(){
 		
       });
 	  
-	  		$.get('/final-project-fullstack-master/php/proskills.php?user=' + userName, function(data) { //This code makes an HTTP request to /arik and puts the data in the 'data' variable
+	  		$.get('/final-project-fullstack/php/proskills.php?user=' + userName, function(data) { //This code makes an HTTP request to /arik and puts the data in the 'data' variable
 			
           console.log('Got data', data); //We just print whatever we got from the server
 		  for ($x = 0; $x <= data.length; $x++) {
