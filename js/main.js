@@ -50,6 +50,12 @@ $(function(){
        { //This code makes an HTTP request to /arik and puts the data in the 'data' variable
 			
           console.log('Got data', data); //We just print whatever we got from the server
+		  
+		  //clear "loading" text
+		  $('#skillname').empty();
+		  $('#skillvalue').empty();
+		  
+		  
 		  for ($x = 0; $x <= data.length; $x++) 
           {
 			$('#skillname').append('<li>'+data[$x].skillname+'</li>');
@@ -62,6 +68,11 @@ $(function(){
          { //This code makes an HTTP request to /arik and puts the data in the 'data' variable
 			
           console.log('Got data', data); //We just print whatever we got from the server
+		  //clear "loading" text
+		  $('#skillnameper').empty();
+		  $('#skillvalueper').empty();
+		 
+		 
 		  for ( $x=0;$x <= data.length; $x++) {
 			$('#skillnameper').append('<li>'+data[$x].skillname+'</li>');
 			$('#skillvalueper ').append('<li><progress max=100 value='+data[$x].skillvalue+'></progress></li>');
