@@ -18,6 +18,7 @@ $(function(){
           $('#intro-me').append('<li>'+data.area+'</li>')
           $('#intro-me').append('<li>'+data.email+'</li>')
 		  
+		  
 		  //aboutme
 		  $('#about p').text(data.about);
 		  
@@ -79,6 +80,59 @@ $(function(){
 			}
 		});
         
+		
+		  $.get('/final-project-fullstack/php/hobbies.php?user=' + userName, function(data) 
+		  {//This code makes an HTTP request to /arik and puts the data in the 'data' variable
+				  console.log('Got data', data); //We just print whatever we got from the server
+				  $('#categories').empty();
+				  
+				  for ( $x=0;$x <= data.length; $x++) {
+					$('#categories').append('<li><i class="fa fa-'+data[$x].photo+'"></i><a href="#">'+data[$x].topic+'</a></li>')
+				  }
+				  
+			  });
+			  
+		 $.get('/final-project-fullstack/php/language.php?user=' + userName, function(data) 
+		  {//This code makes an HTTP request to /arik and puts the data in the 'data' variable
+				  console.log('Got data', data); //We just print whatever we got from the server
+				  
+				  $('#languagename').empty();
+				  $('#languageval').empty();
+				  
+				  for ( $x=0;$x <= data.length; $x++) {
+				  $('#languagename').append('<li>'+data[$x].languageName+'</li>')
+				  $('#languageval').append('<li><progress max=100 value='+data[$x].languageValue+'></progress></li>')
+				  }
+				  
+			  });
+			  
+		 $.get('/final-project-fullstack/php/experience.php?user=' + userName, function(data) 
+		  {//This code makes an HTTP request to /arik and puts the data in the 'data' variable
+				  console.log('Got data', data); //We just print whatever we got from the server
+				  
+				  $('.palegoldenrod').empty();
+				  $('.palegoldenrod').append('<h2>Experience</h2>');
+				  
+				  for ( $x=0;$x <= data.length; $x++) {
+				  $('.palegoldenrod').append('<section><aside><h5>'+ data[$x].BlueTitle +'</h5><span>' + data[$x].date + '</span></aside><article><h4><strong>' + data[$x].Title + '</strong></h4>' + data[$x].paragraph + '</article></section>')
+				  
+				  }
+				  
+			  });
+			  
+		 $.get('/final-project-fullstack/php/education.php?user=' + userName, function(data) 
+		  {//This code makes an HTTP request to /arik and puts the data in the 'data' variable
+				  console.log('Got data', data); //We just print whatever we got from the server
+				  
+				  $('#education').empty();
+				  
+				  for ( $x=0;$x <= data.length; $x++) {
+				  $('.palegoldenrod').append('<section><aside><h5>'+ data[$x].BlueTitle +'</h5><span>' + data[$x].date + '</span></aside><article><h4><strong>' + data[$x].Title + '</strong></h4>' + data[$x].paragraph + '</article></section>')
+				  
+				  }
+				  
+			  });
+			  
     }
 
 });

@@ -3,7 +3,7 @@
 	  'hostname' => 'localhost',
 	  'username' => 'root',
 	  'password' => '',
-	  'database' => 'yosi'
+	  'database' => 'php-course'
 	);
 
 	$mysqli = new mysqli($dbParams['hostname'], $dbParams['username'], $dbParams['password'], $dbParams['database']);
