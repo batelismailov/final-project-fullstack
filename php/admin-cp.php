@@ -37,7 +37,7 @@ if($result->num_rows>0)
 	echo "<tr><td>First name</td><td>Last name</td><td>Email</td><td>Delete</td><td>Edit</td></tr>";
 	while($row=$result->fetch_assoc())
 	{
-		echo "<tr>	<td><a href=\"../#".$row['name']."\"> ".$row['firstname']."</a></td>	<td>".$row['lastname']."</td>		<td>".$row['email']."</td>		<td><a href=\"/delete.php?user=".$row['name']." \"><button>Delete</button></a></td>		<td><a href=\"/Edit.php?user=".$row['name']." \"><button>Edit</button></a></td>	</tr>";
+		echo "<tr>	<td><a href=\"../#".$row['name']."\"> ".$row['firstname']."</a></td>	<td>".$row['lastname']."</td>		<td>".$row['email']."</td>		<td><a href=\"delete.php?user=".$row['name']." \"><button>Delete</button></a></td>		<td><a href=\"Edit.php?user=".$row['name']." \"><button>Edit</button></a></td>	</tr>";
 	}
 	echo "</table>";
 	
